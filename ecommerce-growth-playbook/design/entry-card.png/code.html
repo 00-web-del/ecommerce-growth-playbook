@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>配件商城 - 智能匹配</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#258cf4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .apple-shadow {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        }
+        .apple-shadow-hover:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-[1280px] mx-auto px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">camera</span>
+<span class="text-xl font-bold tracking-tight">商城</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">配件</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">相机</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">镜头</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">服务</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="搜索配件..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-slate-600 dark:text-slate-300">shopping_bag</button>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Minimalist profile avatar of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ln9I9kdu8RApmJIotJPiOr8YI_kw4gRDRcE0otsrRpECNefYgcXJuZAdpI83Mbxw2UJZ0-v6nqeZ4ZEhch2jRQS67jxQWbuhoHKtXDRTIPzqjvj-HAyGBjbjOAd-_ZxFIRpADpoiGM3PyNWKt3VoZbJCnAeOeKnqx3ley9uJR141KD8Au_Ia53FiAnqXALh_-n3MQkSR66R-6f6sMD17YoWLZdCJETtmYLxDz4b9AA54Vt8wyXvXHvhPxCPOQsO81wtmRuCsHng"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-8 py-12 md:py-16">
+<div class="flex flex-col lg:flex-row gap-10 items-start">
+<!-- Left Side: Product Context -->
+<div class="w-full lg:w-3/5 space-y-8">
+<div>
+<h2 class="text-3xl font-bold tracking-tight mb-2">热门配件</h2>
+<p class="text-slate-500 dark:text-slate-400">精选最受摄影师欢迎的专业装备</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Accessory Item 1 -->
+<div class="group bg-white dark:bg-slate-900 p-4 rounded-xl apple-shadow apple-shadow-hover transition-all">
+<div class="aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden">
+<img alt="Lens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional wide angle camera lens on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAileYCf1wO0EESkX89c3aUoabq6Awen6n4WvEdh0XT6L_R8T7iBEIxu7Z6XAiGrkt6bIRUt5mYZ5W3equCDuGtHG_Xow_-aee0TFNYqjzd75-dEs64NQ1JijZuYbuAE0iVAmBLyzDocgBZjMlxFAJXd-AXUPMtbIGmqGGNS4SDut59pY627KWUOI--2msm4BOqAZuiRQa9na4Y44oHBDMe9S19m8AeydW5PhnyqP0JPalDvHZ_ZqpxxCeE9j98l6JqGqtUBHgZBXU"/>
+</div>
+<h3 class="font-semibold text-lg">超广角镜头</h3>
+<p class="text-sm text-slate-500 mb-4">兼容 Z 系列全画幅微单</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥4,999</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">add_circle</button>
+</div>
+</div>
+<!-- Accessory Item 2 -->
+<div class="group bg-white dark:bg-slate-900 p-4 rounded-xl apple-shadow apple-shadow-hover transition-all">
+<div class="aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden">
+<img alt="Tripod" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek carbon fiber camera tripod folded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7CxDlbMsfWS7QtWxiaegtsb_mmOcpZ04o8LnUFltocNfXEZ0S75R5cia6L4RK15DxiRkAtH-4aClvjZt6LyoRspsbVNFQvBs_gd-C5RT-ljYf4P-YNPnh6G49UVMtlls1TSmDnWbNBxgDBwBpkqJDcvDKFNb2BK1Q0wxT_qjLyHXs0y6Ug1_gj3rrw6iIRqjsu7hsJ5MGScUMhWSDe5JlPwMcDpGR14yhznM4t2IOFH01meumYFT1l6DNBjvtrPqWnFoYuu60tlc"/>
+</div>
+<h3 class="font-semibold text-lg">专业碳纤维三脚架</h3>
+<p class="text-sm text-slate-500 mb-4">超轻便携，承重达15kg</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥1,299</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">add_circle</button>
+</div>
+</div>
+<!-- Accessory Item 3 -->
+<div class="group bg-white dark:bg-slate-900 p-4 rounded-xl apple-shadow apple-shadow-hover transition-all">
+<div class="aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden">
+<img alt="Battery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High capacity lithium camera battery pack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAwC75NsMb-3_QQGwOrGRdHc-Ezf096I6gNYcBUlV2uFIImTScUzkRpQXWKzmKzW6F-ZZV_WOOp90AARdl3Ik7MEh5MnjMpCtU4PRCAGmI2EWENibO_0ugOvZcxd2BNeuc71o65d99npQqlYddEW2e4uHMj_AVgjRGuZIlqP6d5u7B7_sT-Qwz1J9f6MCj8ALcAPel6N96xTdE34lmHQVfWio_b64lPENIM0z01XZ3eAlDN1t0kArP4xmtEq1jCRYxBSdwOwQTi8U"/>
+</div>
+<h3 class="font-semibold text-lg">智能锂电池</h3>
+<p class="text-sm text-slate-500 mb-4">2280mAh 高续航表现</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥450</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">add_circle</button>
+</div>
+</div>
+<!-- Accessory Item 4 -->
+<div class="group bg-white dark:bg-slate-900 p-4 rounded-xl apple-shadow apple-shadow-hover transition-all">
+<div class="aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-4 overflow-hidden">
+<img alt="SD Card" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High speed V90 memory card detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRLlvSLxeADxazGt_lvtvGJoafEorJBqfz9Ypn0mvoA-ffDytEbS2gjAUQpxeCWUH5TRt6KLNXlsF09GcVlk4hLRBhFkwFAOYQjQ-_tavzeEzyyp8Ne2LsECPYenyedXPtsSVrlv1pBnFEy7dWlzcVgCC9brTJqI1WZE-itkXPSECxQWXHoGDNyXCWtS_ICr6DN1Yern9qrFjdndCC2he4xR9ldmMJ3hB-klZV5rDFH4AFd11hn1IpjEs_Ga7GC_CnoYE9CCPv6_s"/>
+</div>
+<h3 class="font-semibold text-lg">高速存储卡</h3>
+<p class="text-sm text-slate-500 mb-4">128GB V90 读写速率</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">¥899</span>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">add_circle</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: CTA Card -->
+<div class="w-full lg:w-2/5 lg:sticky lg:top-28 lg:max-w-md">
+<div class="bg-white dark:bg-slate-900 rounded-2xl p-8 md:p-10 apple-shadow border border-slate-100 dark:border-slate-800 p-10">
+<div class="flex flex-col items-center text-center space-y-8">
+<div class="w-24 h-24 bg-primary/5 dark:bg-primary/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1">auto_awesome</span>
+</div>
+<div class="space-y-3">
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">找不到兼容配件？</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed max-w-[280px] mx-auto">
+                                试试智能匹配助手，只需3步即可精准找到适合你相机的配件。
+                            </p>
+</div>
+<div class="w-full pt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group">
+<span>开始匹配</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-400 pt-4 uppercase tracking-widest font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified</span>官方认证</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span>即时建议</span>
+</div>
+</div>
+</div>
+<!-- Secondary Info Card -->
+<div class="mt-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700 flex items-center gap-4 p-8">
+<span class="material-symbols-outlined text-slate-400">support_agent</span>
+<div class="text-sm">
+<p class="font-medium text-slate-700 dark:text-slate-200">需要更多帮助？</p>
+<p class="text-slate-500">联系我们的专家，获取个性化建议</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 mt-20">
+<div class="max-w-[1280px] mx-auto px-8 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-wider">选购</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">最新配件</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">相机镜头</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">清洁套装</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">礼品卡</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-wider">服务</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">订单状态</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">配送政策</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">退货中心</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">常见问题</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-wider">专业渠道</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">摄影工作室</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">企业团购</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">教育优惠</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-wider">关于</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">我们的故事</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">可持续发展</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">隐私政策</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 Apple 风格商城. 保留所有权利。</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-600" href="#">中国 (简体中文)</a>
+<a class="hover:text-slate-600" href="#">沪ICP备00000000号</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
