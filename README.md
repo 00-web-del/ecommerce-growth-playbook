@@ -1,5 +1,3 @@
-<img width="444" height="26" alt="image" src="https://github.com/user-attachments/assets/3b7c09ff-6243-4f04-b4fe-35192309178a" /># ecommerce-growth-playbook
-跨境电商独立站增长实验项目 - 竞品分析、功能设计、数据验证全流程
 # 跨境电商独立站增长实验项目
 
 这是一个模拟真实业务场景的电商产品项目，涵盖竞品分析、用户调研、功能设计与数据验证全流程。以影石Insta360独立站为分析样本，但方法论适用于各类DTC品牌。
